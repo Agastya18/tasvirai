@@ -3,11 +3,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Button } from '@/components/ui/button'
 import UploadForm from '../../_components/uploadForm'
-import { TicketPercent,Search } from 'lucide-react';
+import { TicketPercent,Search,Rocket } from 'lucide-react';
 import { Input } from "@/components/ui/input"
 const page = () => {
   return (
-    <div className='p-5 px-8 md:px-32  '>
+    <div className='p-4 px-8 md:px-32  '>
       <div className=' flex md:flex-row flex-col  justify-between items-center'>
     <div>
     <h2 className=' text-[20px]  m-5 tracking-wide  '>
@@ -26,9 +26,9 @@ const page = () => {
     {/* <h1>--------------</h1> */}
 
 
-    <div className="flex items-center justify-center p-12">
+    <div className="flex items-center justify-center  md:p-8">
   {/* Author: FormBold Team */}
-  <div className="mx-auto w-full max-w-[550px] bg-white">
+  <div className="mx-auto w-full max-w-[550px]  bg-slate-100 rounded-lg shadow-lg p-4">
     <form>
       <div className="mb-5">
         <label
@@ -82,15 +82,15 @@ const page = () => {
         </div>
       </div>
       <div className="mb-5 pt-3">
-        <Label className="mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
+        <Label className="mb-5 block text-base  text-[#07074D] ">
           Address Details
         </Label>
         <Textarea placeholder="Type your message here." id="message" />
         
       </div>
       <div>
-        <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-          Book Appointment
+        <button className="hover:shadow-form w-full rounded-full bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none flex items-center justify-center gap-2 ">
+        <Rocket /> <p> Create</p>
         </button>
       </div>
     </form>

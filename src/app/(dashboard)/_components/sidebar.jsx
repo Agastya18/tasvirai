@@ -1,5 +1,6 @@
 "use client";
 import logo from '@/public/logo1.svg'
+import logo1 from '@/public/tas.png'
 import Link from "next/link";
 import Image from "next/image";
 // import { Montserrat } from 'next/font/google'
@@ -40,15 +41,17 @@ export const Sidebar = () => {
     <div className="space-y-4 py-4 flex flex-col h-full shadow-xl   bg-white  text-black">
       <div className="px-3 py-2 flex-1">
         <Link href="/event" className="flex items-center pl-3 mb-14">
-          <div className="relative h-8 w-8 mr-4">
-            <Image fill alt="Logo" src={logo} />
+          <div className="relative  h-10 w-full mr-4">
+            <Image fill alt="Logo" src={logo1} className=' object-cover rounded-md' />
           </div>
-          <h1 className={cn("text-2xl font-bold")}>
+          {/* <h1 className={cn("text-2xl font-bold font-custom")}>
             Tasvirai
-          </h1>
+          </h1> */}
+          
+          
         </Link>
-        <hr />
-        <div className="space-y-1">
+        <hr className='' />
+        <div className="space-y-3">
           {routes.map((route) => (
             <Link
               key={route.href} 

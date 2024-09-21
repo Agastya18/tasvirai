@@ -9,7 +9,7 @@ const Navbar = async () => {
 //   const isPro = await checkSubscription();
 
   return ( 
-    <div className="flex items-center p-4 bg-red-600">
+    <div className="flex items-center p-4  bg-slate-100">
       <MobileSidebar  />
       <div className="flex w-full md:justify-end  justify-between">
       <div className=" md:hidden ">
