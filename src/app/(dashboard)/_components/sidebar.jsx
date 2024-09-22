@@ -3,6 +3,7 @@ import logo from '@/public/logo1.svg'
 import logo1 from '@/public/tas.png'
 import Link from "next/link";
 import Image from "next/image";
+import Upgrade from './upgrade';
 // import { Montserrat } from 'next/font/google'
 import { Code, ImageIcon, BookImage, FilePlus2, Music, Settings, UserRoundPen } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -57,7 +58,7 @@ export const Sidebar = () => {
               key={route.href} 
               href={route.href}
               className={cn(
-                "text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white  hover:bg-purple-600  rounded-full transition",
+                "text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white  hover:bg-purple-400  rounded-full transition",
                 pathname === route.href ? "text-white bg-purple-700" : "text-zinc-600",
               )}
             >
@@ -73,7 +74,8 @@ export const Sidebar = () => {
         apiLimitCount={apiLimitCount} 
         isPro={isPro}
       /> */}
-      freecounter
+      <Upgrade usedStorage={111} totalStorage={10} />
+    
     </div>
   );
 };

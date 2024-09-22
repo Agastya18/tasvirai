@@ -9,7 +9,7 @@ const page = () => {
     <div className=' flex md:flex-row flex-col  justify-between items-center'>
     <div>
     <h2 className=' text-[20px]  m-5 tracking-wide  '>
-      My, <strong className=" text-purple-500">Events</strong>🤩
+      Hi, <strong className=" text-purple-500">Agastya</strong>🤩
     </h2> 
     </div>
     <div className="flex w-full max-w-sm items-center bg-slate-200 rounded-xl  ">
