@@ -8,7 +8,7 @@ export default function Upgrade({ usedStorage, totalStorage }= { usedStorage: 28
   const usedPercentage = (usedStorage / totalStorage) * 100
 
   return (
-    <div className="bg-gray-200 p-4 rounded-2xl shadow-sm mx-auto  w-52">
+    <div className="bg-gray-200 p-4 rounded-2xl shadow-sm mx-auto   w-52">
       <div className="flex items-center mb-2">
         <Cloud className="w-5 h-5 mr-2 text-gray-600" />
         <h2 className="text-lg font-semibold text-gray-800">My Storage</h2>

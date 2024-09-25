@@ -16,7 +16,7 @@ export default function YourPlan() {
       <div className="bg-white shadow-md rounded-2xl p-6   ">
         <div className="flex items-center space-x-6 mb-6">
           <Image
-            src="https://testbase.blr1.cdn.digitaloceanspaces.com/pngegg%20(3).png"
+            src="https://tasvirai-storages.blr1.cdn.digitaloceanspaces.com/pngegg%20(3).png"
             alt="Rider avatar"
             width={80}
             height={80}

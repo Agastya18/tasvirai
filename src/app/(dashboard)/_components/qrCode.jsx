@@ -9,7 +9,7 @@ import { Download, Share2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export default function QRCodeDisplay() {
-  const [url, setUrl] = useState('https://testbase.blr1.cdn.digitaloceanspaces.com/qr-6865526_1280.png')
+  const [url, setUrl] = useState('https://tasvirai-storages.blr1.cdn.digitaloceanspaces.com/qr-6865526_1280.png')
 
 
 
@@ -20,7 +20,7 @@ export default function QRCodeDisplay() {
       <CardContent className="p-2 ">
         <div className="flex justify-center mb-4">
           {/* <QRCodeSVG id="qr-code" value={url} size={200} /> */}
-         <Image src="https://testbase.blr1.cdn.digitaloceanspaces.com/qr-6865526_1280.png" alt='asda' width={220}  height={300} />
+         <Image src="https://tasvirai-storages.blr1.cdn.digitaloceanspaces.com/qr-6865526_1280.png" alt='asda' width={220}  height={300} />
 
         </div>
         <Input

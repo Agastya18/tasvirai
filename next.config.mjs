@@ -13,8 +13,10 @@ const nextConfig = {
         },
         {
           protocol: 'https',
-          hostname: 'testbase.blr1.cdn.digitaloceanspaces.com',
-        }
+          hostname: 'tasvirai-storages.blr1.cdn.digitaloceanspaces.com',
+        },
+       
+        
       ],
     },
 };

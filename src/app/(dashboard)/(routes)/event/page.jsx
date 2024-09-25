@@ -23,7 +23,7 @@ const page = () => {
     {/* ---------------- */}
     
    
-        <div className=' mt-8'>
+        <div className=' mt-8 '>
         <UploadForm/>
         </div>
     </div>

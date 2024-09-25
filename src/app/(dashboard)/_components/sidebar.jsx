@@ -51,14 +51,15 @@ export const Sidebar = () => {
           
           
         </Link>
-        <hr className='' />
+        <hr className=' mb-6 ' />
+        
         <div className="space-y-3">
           {routes.map((route) => (
             <Link
               key={route.href} 
               href={route.href}
               className={cn(
-                "text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white  hover:bg-purple-400  rounded-full transition",
+                "text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white  hover:bg-purple-500  rounded-full transition",
                 pathname === route.href ? "text-white bg-purple-700" : "text-zinc-600",
               )}
             >
@@ -74,7 +75,9 @@ export const Sidebar = () => {
         apiLimitCount={apiLimitCount} 
         isPro={isPro}
       /> */}
+      
       <Upgrade usedStorage={111} totalStorage={10} />
+
     
     </div>
   );

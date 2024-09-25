@@ -21,7 +21,7 @@ const UploadForm = () => {
    // console.log(file)
   }
   return (
-    <div className='text-center'>
+    <div className='text-center '>
     
       <div className="flex items-center justify-center w-full">
   <label
