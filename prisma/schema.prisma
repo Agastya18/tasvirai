@@ -17,13 +17,46 @@ datasource db {
 
 model User {
   id                String       @id @default(cuid())
-  name              String?
-  email             String?   @unique
+  name              String
+  email             String   @unique
   image             String?
   sessions          Session[]
+  photos            Photo[]                       
+  events            Event[]     
   createdAt         DateTime    @default(now())
   
 }
+
+model Event {
+  id          String   @id @default(cuid())  // Unique identifier for each event
+  name        String                         // Name of the event (e.g., Wedding, Trip)
+  createdAt   DateTime @default(now())        // Timestamp for event creation
+  userId      String                         // The user who created the event
+  user        User    @relation(fields: [userId], references: [id])
+  photos      Photo[]                         // One-to-many relationship with photos
+}
+
+model Photo {
+  id           String   @id @default(uuid())  // Unique identifier for each photo
+  url          String                         // URL where the photo is stored
+  faceData     String[]                       // Array of face data or face IDs (multiple people in one photo)
+  uploadedAt   DateTime @default(now())        // Timestamp when the photo was uploaded
+  eventId      String?                         // Optional event reference
+  event        Event?   @relation(fields: [eventId], references: [id])
+  userId       String                          // The user who uploaded the photo
+  user         User    @relation(fields: [userId], references: [id])
+  sharedLinks  SharedLink[]                    // One-to-many relationship with shared links (QR codes, URLs)
+}
+
+model SharedLink {
+  id        String   @id @default(uuid())  // Unique identifier for each shared link
+  linkType  LinkType                      
+  link      String                        // The actual QR code data or direct link
+  photoId   String                        // The photo that this link shares
+  photo     Photo    @relation(fields: [photoId], references: [id])
+  createdAt DateTime @default(now())       // Timestamp when the link was created
+}
+
 
 
 
@@ -33,4 +66,9 @@ model Session {
   userId       String
   expires      DateTime
   user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum LinkType {
+  QR_CODE
+  DIRECT_LINK
 }
