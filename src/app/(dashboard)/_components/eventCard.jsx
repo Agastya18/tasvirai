@@ -6,10 +6,11 @@ import {
     CardTitle,
   } from "@/components/ui/card";
   import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
   
-  import { FileTextIcon, GanttChartIcon, ImageIcon } from "lucide-react";
- 
+  import { FileTextIcon, GanttChartIcon, ImageIcon, UserPlus, Download,  Settings, Trash2,CloudUpload } from "lucide-react";
+
   import Image from "next/image";
 
   
@@ -18,7 +19,7 @@ import {
  const EventCard = () => {
    return (
    <>
-     <a href="#" className="block rounded-2xl bg-slate-100  p-4 shadow-sm shadow-indigo-100">
+     <a href="#" className="block rounded-2xl bg-slate-100    p-5 shadow-sm shadow-indigo-100">
   <Image
     alt="ada"
     width={'200'}
@@ -29,88 +30,40 @@ import {
 
   <div className="mt-2">
     <dl>
-      <div>
-        <dt className="sr-only">Price</dt>
+    <div>
+        <dt className="sr-only">Event name</dt>
 
-        <dd className="text-sm text-gray-500">$240,000</dd>
+        <dd className="font-medium">Uk trip</dd>
+      </div>
+      <div>
+        <dt className="sr-only">Day</dt>
+
+        <dd className="text-sm text-gray-500">Friday, 20/12/2024</dd>
       </div>
 
-      <div>
-        <dt className="sr-only">Address</dt>
-
-        <dd className="font-medium">123 Wallaby Avenue, Park Road</dd>
-      </div>
+     
     </dl>
 
     <div className="mt-6 flex items-center gap-8 text-xs">
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Parking</p>
-
-          <p className="font-medium">2 spaces</p>
+    <div className="flex justify-between w-full">
+          <Button className="bg-gray-300 rounded-full" variant="ghost" size="icon">
+            <UserPlus className="w-5 h-5" />
+          </Button>
+          <Button className="bg-gray-300 rounded-full" variant="ghost" size="icon">
+            <Download className="w-5 h-5" />
+          </Button>
+          <Button className="bg-gray-300 rounded-full" variant="ghost" size="icon">
+          <CloudUpload />
+          </Button>
+          <Button className="bg-gray-300 rounded-full" variant="ghost" size="icon">
+            <Settings className="w-5 h-5" />
+          </Button>
+          <Button  variant="ghost" size="icon" className="text-red-500 hover:text-red-700 bg-gray-300 rounded-full">
+            <Trash2 className="w-5 h-5" />
+          </Button>
         </div>
-      </div>
 
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Bathroom</p>
-
-          <p className="font-medium">2 rooms</p>
-        </div>
-      </div>
-
-      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-        <svg
-          className="size-4 text-indigo-700"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
-
-        <div className="mt-1.5 sm:mt-0">
-          <p className="text-gray-500">Bedroom</p>
-
-          <p className="font-medium">4 rooms</p>
-        </div>
-      </div>
+     
     </div>
   </div>
 </a>
