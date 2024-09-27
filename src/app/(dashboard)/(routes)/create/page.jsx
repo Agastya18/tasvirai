@@ -1,12 +1,22 @@
+"use client"
 import React from 'react'
+import Link from 'next/link'
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Button } from '@/components/ui/button'
 import UploadForm from '../../_components/uploadForm'
+
 import { TicketPercent,Search,Rocket } from 'lucide-react';
 import { Input } from "@/components/ui/input"
 import { cn } from '@/lib/utils'
 const page = () => {
+ // const router = useRouter()
+
+
+  const handleSubmit = () => {
+    console.log('clicked')
+    
+  }
   return (
     <div className='p-5 px-8 md:px-32  '>
       <div className=' flex md:flex-row flex-col  justify-between items-center'>
@@ -16,7 +26,9 @@ const page = () => {
     </h2> 
     </div>
   
-   <Button className="bg-gradient-to-r from-gray-900 to-slate-600  text-white rounded-xl  mt-3 md:mt-0" > <TicketPercent className="mr-2 h-4 w-4 "/>Create event</Button>
+{/* 
+   <Button onClick={handleSubmit}  className="bg-gradient-to-r from-gray-900 to-slate-600  text-white rounded-xl  mt-3 md:mt-0" > <TicketPercent className="mr-2 h-4 w-4 "/>Create event</Button> */}
+
     </div>
     <hr className=' mt-3 md:mt-0' />
 
@@ -33,13 +45,13 @@ const page = () => {
           htmlFor="name"
           className="mb-3 block text-base font-medium text-[#07074D]"
         >
-          Full Name
+          Event Name
         </label>
         <input
           type="text"
           name="name"
           id="name"
-          placeholder="Full Name"
+          placeholder=" Name"
           className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
@@ -68,12 +80,13 @@ const page = () => {
               htmlFor="time"
               className="mb-3 block text-base font-medium text-[#07074D]"
             >
-              Time
+              Event Type
             </label>
             <input
-              type="time"
+              type="text"
               name="time"
               id="time"
+              placeholder='ex. Trip, wedding'
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
@@ -81,9 +94,9 @@ const page = () => {
       </div>
       <div className="mb-5 pt-3">
         <Label className="mb-5 block text-base  text-[#07074D] ">
-          Address Details
+          Event Details
         </Label>
-        <Textarea className={cn(" bg-white border-[#e0e0e0]")} placeholder="Type your message here." id="message" />
+        <textarea className=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md " placeholder="[optional]  "  />
         
       </div>
       <div>
