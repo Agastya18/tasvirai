@@ -1,5 +1,5 @@
 'use client'
-
+import prisma from '../../../db'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
@@ -32,10 +32,11 @@ const Navbar = () => {
     const { data } = useSession()
     console.log(data)
   //  const [isMounted, setIsMounted] = useState(false)
+ 
   return (
     <header className="w-screen py-4 border-b md:border-none fixed top-0 left-0 right-0 bg-[#f3dff6] md:bg-white/0 z-40 ">
-    <div className="container pl-32 px-4   ">
-      <div className="  flex justify-between items-center md:border md:p-2.5 rounded-full max-w-2xl lg:max-w-4xl mx-auto  md:bg-slate-100 md:backdrop:blur-xl ">
+    <div className="container pl-36 px-3    ">
+      <div className="   flex justify-between items-center md:border md:p-2.5  rounded-full max-w-2xl lg:max-w-2xl mx-auto  md:bg-slate-100 md:backdrop:blur-xl ">
         <div>
           <div className="border  h-10 w-10 rounded-lg inline-flex justify-center items-center">
             {/* <Logo className="h-8 w-8" fill="#000000" /> */}
@@ -107,6 +108,7 @@ const Navbar = () => {
             </div>
             </>
           )}
+         
           <span className="md:hidden">
             <Menu />
           </span>

@@ -43,11 +43,8 @@ const page = () => {
       <EventCard/>
 
       <EventCard/>
-      <EventCard/>
-      <EventCard/>
-
-      <EventCard/>
-      <EventCard/>
+      
+     
       </div>
 
     </div>

@@ -1,20 +1,30 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import axios from 'axios'
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Button } from '@/components/ui/button'
 import UploadForm from '../../_components/uploadForm'
-
+import { eventSubmit } from '@/actions/event.action'
 import { TicketPercent,Search,Rocket } from 'lucide-react';
 import { Input } from "@/components/ui/input"
 import { cn } from '@/lib/utils'
 const page = () => {
  // const router = useRouter()
+/* eslint-disable */
+ const [name,setName]= useState('')
+  const [date,setDate]= useState('')
+  const [type,setType]= useState('')
+  const [details,setDetails]= useState('')
+  
 
 
-  const handleSubmit = () => {
-    console.log('clicked')
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    console.log(name,date,type,details)
+    await eventSubmit(name,date,type,details);
+   
     
   }
   return (
@@ -49,6 +59,9 @@ const page = () => {
         </label>
         <input
           type="text"
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
+
           name="name"
           id="name"
           placeholder=" Name"
@@ -68,6 +81,8 @@ const page = () => {
             </label>
             <input
               type="date"
+              value={date}
+              onChange={(e)=>setDate(e.target.value)}
               name="date"
               id="date"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -84,6 +99,8 @@ const page = () => {
             </label>
             <input
               type="text"
+              value={type}
+              onChange={(e)=>setType(e.target.value)}
               name="time"
               id="time"
               placeholder='ex. Trip, wedding'
@@ -96,11 +113,14 @@ const page = () => {
         <Label className="mb-5 block text-base  text-[#07074D] ">
           Event Details
         </Label>
-        <textarea className=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md " placeholder="[optional]  "  />
+        <textarea
+          value={details}
+          onChange={(e)=>setDetails(e.target.value)}
+         className=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md " placeholder="[optional]  "  />
         
       </div>
       <div>
-        <button className="hover:shadow-form w-full rounded-full bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none flex items-center justify-center gap-2 ">
+        <button onClick={handleSubmit} className="hover:shadow-form w-full rounded-full bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none flex items-center justify-center gap-2 ">
         <Rocket /> <p> Create</p>
         </button>
       </div>

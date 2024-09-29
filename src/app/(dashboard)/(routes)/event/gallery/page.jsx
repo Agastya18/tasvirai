@@ -30,7 +30,7 @@ const page = () => {
 
      
      
-    <div className='text-center '>
+    <div className='text-center  mt-7 '>
     
     <div className="flex items-center justify-center w-full">
 <label
@@ -46,7 +46,7 @@ const page = () => {
        PNG, JPG  (MAX. 2MB)
     </p>
   </div>
-  <input id="dropzone-file" type="file" className="hidden" onChange={(e)=>onFileSelect(e.target.files[0])} />
+  <input id="dropzone-file" type="file" className="hidden"  />
 </label>
 </div>
 {/* {
@@ -55,7 +55,7 @@ file?  <FilePreview file={file} removeFile={()=>setFile(null)} /> : null
 
 
 {
-<button onClick={()=>uploadFile(file)} disabled={!file} className=" p-2 hover:cursor-pointer  bg-purple-600 text-white w-[30%] rounded-full mt-5
+<button  className=" p-2 hover:cursor-pointer  bg-purple-600 text-white w-[30%] rounded-full mt-5
 
 ">Get Started!</button>
 }

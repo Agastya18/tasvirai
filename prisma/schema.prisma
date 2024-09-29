@@ -20,7 +20,7 @@ model User {
   name              String
   email             String   @unique
   image             String?
-  sessions          Session[]
+
   photos            Photo[]                       
   events            Event[]     
   createdAt         DateTime    @default(now())
@@ -30,10 +30,12 @@ model User {
 model Event {
   id          String   @id @default(cuid())  // Unique identifier for each event
   name        String                         // Name of the event (e.g., Wedding, Trip)
-  createdAt   DateTime @default(now())        // Timestamp for event creation
+  type        String
+  description String?
   userId      String                         // The user who created the event
   user        User    @relation(fields: [userId], references: [id])
   photos      Photo[]                         // One-to-many relationship with photos
+  createdAt   DateTime @default(now())
 }
 
 model Photo {
@@ -57,16 +59,6 @@ model SharedLink {
   createdAt DateTime @default(now())       // Timestamp when the link was created
 }
 
-
-
-
-model Session {
-  id           String       @id @default(cuid())
-  sessionToken String    @unique
-  userId       String
-  expires      DateTime
-  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
 
 enum LinkType {
   QR_CODE
