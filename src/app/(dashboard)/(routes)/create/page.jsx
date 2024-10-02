@@ -9,21 +9,31 @@ import UploadForm from '../../_components/uploadForm'
 import { eventSubmit } from '@/actions/event.action'
 import { TicketPercent,Search,Rocket } from 'lucide-react';
 import { Input } from "@/components/ui/input"
+import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
-const page = () => {
- // const router = useRouter()
+
+const CreateEvent = () => {
+  const router = useRouter()
 /* eslint-disable */
  const [name,setName]= useState('')
   const [date,setDate]= useState('')
   const [type,setType]= useState('')
-  const [details,setDetails]= useState('')
+  const [description,setDetails]= useState('')
   
+
+
+
 
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    console.log(name,date,type,details)
-    await eventSubmit(name,date,type,details);
+    console.log("test front->>>>",name,type,description)
+  await eventSubmit(name,type,description);
+  window.alert('Event created successfully')
+  router.push('/event')
+  router.refresh()
+
+    
    
     
   }
@@ -114,7 +124,7 @@ const page = () => {
           Event Details
         </Label>
         <textarea
-          value={details}
+          value={description}
           onChange={(e)=>setDetails(e.target.value)}
          className=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md " placeholder="[optional]  "  />
         
@@ -132,4 +142,4 @@ const page = () => {
   )
 }
 
-export default page
+export default CreateEvent

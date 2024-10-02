@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation';
 
 const ProfileDropDown = () => {
     const { data } = useSession();
+   
     const router = useRouter();
 
     const dropDownData = [

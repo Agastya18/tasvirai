@@ -25,7 +25,7 @@ export function middleware(NextRequest,res) {
 
 export const config = {
     matcher: [
-        '/',
+       
         
         
         '/event/:path*',

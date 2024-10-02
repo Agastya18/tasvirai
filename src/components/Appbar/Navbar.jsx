@@ -30,7 +30,7 @@ import {
 const Navbar = () => {
     const router = useRouter()
     const { data } = useSession()
-    console.log(data)
+    // console.log("'data",data)
   //  const [isMounted, setIsMounted] = useState(false)
  
   return (

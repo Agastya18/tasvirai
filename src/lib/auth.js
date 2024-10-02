@@ -51,6 +51,7 @@ export const authOptions = {
     },
    
     async session({ session, user, token }) {
+    
 
         const userSession= await prisma.user.findUnique({
             where: {
@@ -65,7 +66,7 @@ export const authOptions = {
 
         session.user.id = userSession.id
 
-
+       // console.log(user)
         //console.log('session', session)
 
 

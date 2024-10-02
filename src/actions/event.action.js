@@ -3,8 +3,8 @@ import prisma from "../../db";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 
-export const eventSubmit= async(name,date,type,details)=>{
-    console.log(name,date,type,details)
+export const eventSubmit= async(name,type,description)=>{
+    //console.log(name,date,type,details)
     const session = await getServerSession(authOptions);
    // console.log(session)
     if(!session && !session.user){
@@ -14,11 +14,18 @@ export const eventSubmit= async(name,date,type,details)=>{
     const event = await prisma.event.create({
         data:{
             name,
-            type,
-           description:details,
+            type:type,
+           description,
             userId:session.user.id
         }
     })
+   return event
     
     
+}
+
+
+export const getEvents = async(userId)=>{
+    const events = await prisma.event.findMany()
+    return events
 }
