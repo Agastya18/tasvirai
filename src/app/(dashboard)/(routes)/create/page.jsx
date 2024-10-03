@@ -27,7 +27,7 @@ const CreateEvent = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    console.log("test front->>>>",name,type,description)
+   // console.log("test front->>>>",name,type,description)
   await eventSubmit(name,type,description);
   window.alert('Event created successfully')
   router.push('/event')

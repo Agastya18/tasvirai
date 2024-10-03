@@ -20,7 +20,8 @@ model User {
   name              String
   email             String   @unique
   image             String?
-
+  storageUsed       Int      @default(0) // Storage in bytes
+  storagePlan       Plan   @default(FREE)
   photos            Photo[]                       
   events            Event[]     
   createdAt         DateTime    @default(now())
@@ -48,20 +49,22 @@ model Photo {
   event        Event?   @relation(fields: [eventId], references: [id])
   userId       String                          // The user who uploaded the photo
   user         User    @relation(fields: [userId], references: [id])
-  sharedLinks  SharedLink[]                    // One-to-many relationship with shared links (QR codes, URLs)
+ // sharedLinks  SharedLink[]                    // One-to-many relationship with shared links (QR codes, URLs)
 }
 
-model SharedLink {
-  id        String   @id @default(uuid())  // Unique identifier for each shared link
-  linkType  LinkType                      
-  link      String                        // The actual QR code data or direct link
-  photoId   String                        // The photo that this link shares
-  photo     Photo    @relation(fields: [photoId], references: [id])
-  createdAt DateTime @default(now())       // Timestamp when the link was created
-}
+// model SharedLink {
+//   id        String   @id @default(uuid())  // Unique identifier for each shared link
+//   linkType  LinkType                      
+//   link      String                        // The actual QR code data or direct link
+//   photoId   String                        // The photo that this link shares
+//   photo     Photo    @relation(fields: [photoId], references: [id])
+//   createdAt DateTime @default(now())       // Timestamp when the link was created
+// }
 
 
-enum LinkType {
-  QR_CODE
-  DIRECT_LINK
+enum Plan {
+  FREE
+  STANDARD
+  PREMIUM
+
 }

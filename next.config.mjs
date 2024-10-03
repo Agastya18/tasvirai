@@ -15,6 +15,10 @@ const nextConfig = {
           protocol: 'https',
           hostname: 'tasvirai-storages.blr1.cdn.digitaloceanspaces.com',
         },
+        {
+          protocol: 'https',
+          hostname: 'picsum.photos',
+        }
        
         
       ],

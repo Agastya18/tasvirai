@@ -19,7 +19,7 @@ import Link from "next/link";
 
  
  const EventCard = ({data}) => {
-  console.log("data",data)
+ // console.log("data",data)
    return (
    <>
      <Link href={`/event/gallery/${data?.id}`} className="block rounded-2xl bg-slate-100    p-5 shadow-sm shadow-indigo-100">

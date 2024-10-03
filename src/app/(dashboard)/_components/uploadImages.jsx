@@ -11,7 +11,7 @@ import { useSession } from "next-auth/react";
 const UploadImages = () => {
 
     const { data: session } = useSession()
-    console.log("session-->>",session)
+   // console.log("session-->>",session)
   const [file, setFile] = useState();
   const formdata = new FormData();
 
